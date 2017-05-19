@@ -1,0 +1,46 @@
+<form id="visit-form">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <input type="hidden" id="customer_id" value="{{ customer.id}}">
+            <input type="hidden" id="percentage_visit" value="{{ customer.percentage_visit }}">
+            <label for="nit">Nit:</label>
+            <input type="text" class="form-control" id="nit" disabled value="{{ customer.dni }}">
+        </div>
+        <div class="col-sm-6">
+            <label for="full_name">Nombre Cliente:</label>
+            <input type="text" class="form-control" id="full_name" disabled value="{{ customer.full_name }}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <label for="date">Fecha:</label>
+            <input type="text" class="form-control" id="date" readonly="" required="">
+        </div>
+        <div class="col-sm-6">
+            <label for="city">Vendedor</label>
+            <select name="seller" id="sellers_select" class="form-control" required="">
+                <option value="">Seleccione un Vendedor</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <label for="net_value">Valor Neto:</label>
+            <input type="number" class="form-control" id="net_value" required="">
+        </div>
+        <div class="col-sm-6">
+            <label for="visit_value">Valor Visita:</label>
+            <input type="number" class="form-control" id="visit_value" required="" disabled="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="comments">Observaciones:</label>
+        <textarea class="form-control" rows="5" id="comments"></textarea>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p> Balance Saldo Actual: {{ customer.balance_quota | number_format(0, ".", ".") }}</p>
+        </div>
+    </div>
+</form>

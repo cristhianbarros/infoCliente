@@ -1,0 +1,4 @@
+<option value="">Seleccione una Ciudad</option>
+{% for city in cities %}
+    <option value="{{ city.id }}" {{ city.id == customer_city_id ? 'selected' }} >{{ city.name }}</option>
+{% endfor %}

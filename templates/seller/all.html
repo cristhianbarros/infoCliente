@@ -1,0 +1,4 @@
+<option value="">Seleccione un Vendedor</option>
+{% for seller in sellers %}
+    <option value="{{ seller.id }}"  {{ seller.id == customer_seller_id ? 'selected' }} >{{ seller.full_name }}</option>
+{% endfor %}

@@ -1,0 +1,4 @@
+<option value="">Seleccione un Departamento</option>
+{% for state in states %}
+    <option value="{{ state.id }}" {{ state.id == customer_state_id ? 'selected' }}>{{ state.name }}</option>
+{% endfor %}

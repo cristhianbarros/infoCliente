@@ -1,0 +1,52 @@
+<div class="panel-body">
+    <form id="customer-form">
+        <input type="hidden" value="{{ customer.id }}" id="id"/>
+        <div class="form-group">
+            <label for="dni">Nit:</label>
+            <input type="number" class="form-control" id="dni" value="{{ customer.dni }}" required maxlength="20" >
+        </div>
+        <div class="form-group">
+            <label for="full_name">Nombre Completo:</label>
+            <input type="text" class="form-control" id="full_name" value="{{ customer.full_name }}" required="" maxlength="100">
+        </div>
+        <div class="form-group">
+            <label for="address">Dirección:</label>
+            <input type="text" class="form-control" id="address" value="{{ customer.address }}" required="" maxlength="100">
+        </div>
+        <div class="form-group">
+            <label for="phone">Teléfono:</label>
+            <input type="number" class="form-control" id="phone" value="{{ customer.phone }}" maxlength="15">
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <label for="country">Pais:</label>
+                <select name="country" id="countries_select" class="form-control" required="">
+                    <option value="">Seleccione un Pais</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label for="state">Departamento:</label>
+                <select name="state" id="states_select" class="form-control" required="">
+                    <option value="">Seleccione un Departamento</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label for="city">Ciudad:</label>
+                <select name="city" id="cities_select" class="form-control" required="">
+                    <option value="">Seleccione una Ciudad</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="quote">Cupo:</label>
+            <input type="number" class="form-control" id="quota" value="{{ customer.quota | number_format(0, ',', '.') }}" required="" maxlength="12" {{ customer.balance_quota > 0 ? 'disabled': ''}}>
+        </div>
+        <div class="form-group">
+            <label for="balance_quote">Saldo Cupo:</label>
+            <input type="number" class="form-control" id="balance_quota" value="{{ customer.balance_quota == '' ? '0.00' : customer.balance_quota | number_format(0, ',', '.') }}"  maxlength="12" disabled="">
+        </div>
+        <div class="form-group">
+            <label for="percentage_visit">Porcentaje Visitas:</label>
+            <input type="text" class="form-control" id="percentage_visit" value="{{ customer.percentage_visit}}" required="" maxlength="3" max="100">
+        </div>
+    </form>

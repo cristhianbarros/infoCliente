@@ -1,0 +1,45 @@
+<table id="customers_visits_table" class="display" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Fecha</th>
+            <th>Valor Neto</th>
+            <th>Valor Visita</th>
+            <th>Vendedor</th>
+            <th>Observaciones</th>
+<!--            <th>Opciones</th>-->
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>#</th>
+            <th>Fecha</th>
+            <th>Valor Neto</th>
+            <th>Valor Visita</th>
+            <th>Vendedor</th>
+            <th>Observaciones</th>
+<!--            <th>Opciones</th>-->
+        </tr>
+    </tfoot>
+    <tbody>
+
+        {% for visit in visits %}
+        <tr>
+            <td>{{ visit.id }}</td>
+            <td>{{ visit.date | date("Y-m-d") }}</td>
+            <td>{{ visit.net_value | number_format(0, '.', ',') }}</td>
+            <td>{{ visit.visit_value | number_format(0, '.', ',')}}</td>
+            <td>{{ visit.seller }}</td>
+            <td>{{ visit.comments }}</td>
+<!--            <td> 
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </td>-->
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

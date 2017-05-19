@@ -1,0 +1,5 @@
+<chart caption='Gráfico Cantidad de visitas a clientes por ciudad' bgalpha='0' numberPrefix='#' canvasbgalpha='0' showvalues='1' showborder='0' canvasborderalpha='0' showalternatehgridcolor='0' plotgradientcolor='' showplotborder='0' divlinealpha='10' formatnumberscale='1' palettecolors='#f79604,#a4f738,#7287ff,#7287ff'>
+{% for d in data %}
+    <set label='{{ d.name }}' value='{{ d.visitas }}' toolText='{{ d.name }}: {{ d.visitas }}' />
+{% endfor %}
+</chart>

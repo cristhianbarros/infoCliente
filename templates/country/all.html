@@ -1,0 +1,4 @@
+<option value="">Seleccione un Pais</option>
+{% for country in countries %}
+    <option value="{{ country.id }}"  {{ country.id == customer_country_id ? 'selected' }} >{{ country.name }}</option>
+{% endfor %}
