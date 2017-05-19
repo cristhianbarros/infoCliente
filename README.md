@@ -2,23 +2,15 @@
 
 Aplicación realizada con Slim 3 Framework
 
-## Install the Application
+## Instalación de la Aplicación
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+Clonamos el proyecto del repositorio
+    git clone https://github.com/cristhianbarros/infoCliente.git
+    
+Una vez ubicados en la raiz del proyecto ejecutamos el comando para descargar todas las dependencias del proyecto
+    composer install
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
-
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
-
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
-
-To run the application in development, you can also run this command. 
-
-	php composer.phar start
-
-Run this command to run the test suite
-
-	php composer.phar test
-
-That's it! Now go build something cool.
+Dentro de la raiz del proyecto ejecutamos el sigiuiente comando para inicializar el servidor local
+    php -S localhost:8080 -t public public/index.php
+    
+Recuerda importar la base de datos unicada en la carpeta src/Model/customer_info.sql
